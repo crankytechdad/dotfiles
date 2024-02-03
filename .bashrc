@@ -2,6 +2,14 @@
 # ~/.bashrc
 #
 
+# Creator: CrankyTechDad
+# Date: 02/02/24
+# License: GPLv3
+# Use: Standard .bashrc file. 
+# Contact: cranky@crankytechdad.com
+# TikTok: https://tiktok.com/@crankytechdad.com
+# Website: https://crankytechdad.com
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -30,9 +38,17 @@ ShowInstallerIsoInfo() {
     fi
 }
 
-alias cat='bat'
-alias batcat='bat'
-alias please='sudo'
+
+
+# Polite Sudo!
+# alias please='sudo'
+
+# Change the cat utility to the bat utility if it is installed. 
+# alias bat='cat'
+
+# Change batcat on Debian / Ubuntu (or others that need to) to bat
+# alias bat='batcat'
+
 alias ls='ls --color=auto'
 alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
@@ -49,18 +65,8 @@ bind '"\e[B":history-search-forward'
 ################################################################################
 ## Some generally useful functions.
 ## Consider uncommenting aliases below to start using these functions.
-##
-## October 2021: removed many obsolete functions. If you still need them, please look at
-## https://github.com/EndeavourOS-archive/EndeavourOS-archiso/raw/master/airootfs/etc/skel/.bashrc
 
 _open_files_for_editing() {
-    # Open any given document file(s) for editing (or just viewing).
-    # Note1:
-    #    - Do not use for executable files!
-    # Note2:
-    #    - Uses 'mime' bindings, so you may need to use
-    #      e.g. a file manager to make proper file bindings.
-
     if [ -x /usr/bin/exo-open ] ; then
         echo "exo-open $@" >&2
         setsid exo-open "$@" >& /dev/null
@@ -80,10 +86,6 @@ _open_files_for_editing() {
 #------------------------------------------------------------
 
 ## Aliases for the functions above.
-## Uncomment an alias if you want to use it.
-##
-
-# alias ef='_open_files_for_editing'     # 'ef' opens given file(s) for editing
-# alias pacdiff=eos-pacdiff
-################################################################################
+ alias ef='_open_files_for_editing'     # 'ef' opens given file(s) for editing
+ alias pacdiff=eos-pacdif
 
